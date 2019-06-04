@@ -1,0 +1,118 @@
+ playerBlack = "Sri and Andrew";  
+        showText(playerBlack,70,100); 
+        GreenfootImage image1 = new GreenfootImage("black.png"); 
+        String colorInitial = new String("b");
+ 
+        if (firstPlay)
+        {
+            placeCol(3,colorInitial,image1);
+        }
+        int colToPlace = (int)(Math.random()*7);
+        
+        
+        
+
+        for (int c = 0; c < grid[0].length; c++)
+        {
+            for (int r = grid.length-1; r >=3 ; r--)
+            {
+                boolean isUs = grid[r][c]!=null &&grid[r][c].equals(colorInitial); 
+                if(isUs){
+    
+                    if((grid[r-1][c]!=null&&grid[r-2][c]!=null&&grid[r-1][c].equals(colorInitial) && grid[r-2][c].equals(colorInitial))){
+  
+                        if(grid[r-3][c]==null){
+      
+                            placeCol(c,colorInitial,image1);
+                        }
+                    }
+                }
+            }
+        }
+        
+
+        for (int c = 0; c < grid[0].length; c++)
+        {
+            for (int r = grid.length-1; r >-1 ; r--)
+            {
+                boolean isUs = grid[r][c]!=null &&grid[r][c].equals(colorInitial); 
+                if(isUs){
+
+                    if(c<4)
+                    {
+                        if((grid[r][c+1]!=null&&grid[r][c+2]!=null && grid[r][c+1].equals(colorInitial)&&grid[r][c+2].equals(colorInitial))){
+
+                            if(grid[r][c+3]==null){
+
+                                placeCol(c+3,colorInitial,image1);
+                            }   
+                        }
+                    }
+                    if(c>2){    
+                        if((grid[r][c-1]!=null&&grid[r][c-2]!=null && grid[r][c-1].equals(colorInitial)&&grid[r][c-2].equals(colorInitial))){
+
+                            if(grid[r][c-3]==null){
+
+                                    placeCol(c-3,colorInitial,image1);
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+        
+        
+        for (int c = 0; c < grid[0].length; c++)
+        {
+            for (int r = grid.length-1; r >-1 ; r--)
+            {
+                boolean isUs = grid[r][c]!=null && !grid[r][c].equals(colorInitial); 
+                if(isUs){
+
+                    if(c<4)
+                    {
+                        if((grid[r][c+1]!=null&&grid[r][c+2]!=null && grid[r][c+1].equals(colorInitial)&&grid[r][c+2].equals(colorInitial))){
+
+                            if(grid[r][c+3]==null){
+
+                                placeCol(c+3,colorInitial,image1);
+                            }   
+                        }
+                    }
+                    if(c>2){    
+                        if((grid[r][c-1]!=null&&grid[r][c-2]!=null && grid[r][c-1].equals(colorInitial)&&grid[r][c-2].equals(colorInitial))){
+
+                            if(grid[r][c-3]==null){
+
+                                    placeCol(c-3,colorInitial,image1);
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+        
+        for (int c = 0; c < grid[0].length; c++)
+        {
+            for (int r = grid.length-1; r >=3 ; r--)
+            {
+                boolean isUs = grid[r][c]!=null && !grid[r][c].equals(colorInitial); 
+                if(isUs){
+    
+                    if((grid[r-1][c]!=null&&grid[r-2][c]!=null&&grid[r-1][c].equals(colorInitial) && grid[r-2][c].equals(colorInitial))){
+  
+                        if(grid[r-3][c]==null){
+      
+                            placeCol(c,colorInitial,image1);
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+        
+            placeCol(colToPlace,colorInitial,image1);
+           
